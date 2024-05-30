@@ -9,7 +9,7 @@ class CustomBookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.only(left: 20.w),
       child: AspectRatio(
         aspectRatio: 2.7/4,
         child: Container(

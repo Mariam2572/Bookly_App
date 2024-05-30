@@ -9,19 +9,19 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomAppBar(),
-          SizedBox(
-           height: MediaQuery.of(context).size.height*.3,
-
-            child: const BookListView(),),
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 25.w,vertical: 50.h),
-              child: const Text('Best Seller',style: Styles.titleMedium,),
-            )
+          const BookListView(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 50.h),
+            child: const Text(
+              'Best Seller',
+              style: Styles.titleMedium,
+            ),
+          ),
         ],
       ),
     );
