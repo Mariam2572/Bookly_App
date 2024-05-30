@@ -1,24 +1,63 @@
 import 'package:bookly/core/utils/app_assets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class SplashBody extends StatelessWidget {
+class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
 
+  @override
+  State<SplashBody> createState() => _SplashBodyState();
+}
+
+class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateMixin{
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+  late Animation<Offset> slidingAnimation2;
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(vsync: this,duration: const Duration(seconds: 1),);
+    slidingAnimation = Tween<Offset>(begin: const Offset(0, 2),end: Offset.zero).animate(animationController);
+    slidingAnimation2 = Tween<Offset>(begin: const Offset(2, 0),end: Offset.zero).animate(animationController);
+    animationController.forward();
+  }
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(
-         AppAssets.logo,
-          height: MediaQuery.of(context).size.height*.13,
-          
+        AnimatedBuilder(
+          animation: slidingAnimation2,
+          builder: (context,_) {
+            return SlideTransition(
+              position: slidingAnimation2,
+              child: Image.asset(
+               AppAssets.logo,
+                height: MediaQuery.of(context).size.height*.13,
+                
+              ),
+            );
+          }
         ),
         const SizedBox(height: 10,),
-        const Text('Read Free Books',
-        textAlign: TextAlign.center,
-       
+        AnimatedBuilder(
+          animation: slidingAnimation,
+          builder: (context,_) {
+            return SlideTransition(
+              position:slidingAnimation ,
+              child: const Text('Read Free Books',
+              textAlign: TextAlign.center,
+                     
+              ),
+            );
+          }
         )
       ],
     );
