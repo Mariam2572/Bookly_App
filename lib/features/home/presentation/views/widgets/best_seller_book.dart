@@ -1,7 +1,10 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/rating_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerBook extends StatelessWidget {
   const BestSellerBook({super.key});
@@ -23,29 +26,59 @@ class BestSellerBook extends StatelessWidget {
                   ),
                   color: Colors.red,
                   image: DecorationImage(
-                    image: const AssetImage(AppAssets.testImage),
+                    image: AssetImage(AppAssets.testImage),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
             ),
           ),
-          const SizedBox(width: 15,),
-          Column(
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width*.5,
-                child: const Text('Harry Potter and the Goblet of Fire',
-                style: Styles.textStyle20,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,),
-              )
-            ],
-          )
+          const SizedBox(
+            width: 15,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    'Harry Potter and the Goblet of Fire',
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  'J.K. Rowling',
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19.99 €',
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    // Spacer(),
+                    // SizedBox(width: MediaQuery.of(context).size.width*.25,),
+                    const RatingItem()
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
-        
       ),
     );
-    
   }
 }
+
