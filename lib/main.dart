@@ -1,8 +1,9 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/features/splash/persentation/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -18,8 +19,8 @@ class BooklyApp extends StatelessWidget {
        designSize:const Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: GetMaterialApp(
-        home: Splash(),
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: mainColor,

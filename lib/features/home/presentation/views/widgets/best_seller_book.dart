@@ -1,10 +1,12 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_assets.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/rating_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerBook extends StatelessWidget {
   const BestSellerBook({super.key});
@@ -81,4 +83,3 @@ class BestSellerBook extends StatelessWidget {
     );
   }
 }
-
