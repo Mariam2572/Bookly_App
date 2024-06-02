@@ -3,7 +3,7 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_book.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/details_body.dart';
-import 'package:bookly/features/home/presentation/views/widgets/recommended_book_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return const RecommendedBookItem();
+                    return const CustomBookImage();
                   },
                 ),
               ),
