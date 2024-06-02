@@ -72,7 +72,10 @@ class BestSellerBook extends StatelessWidget {
                     ),
                     // Spacer(),
                     // SizedBox(width: MediaQuery.of(context).size.width*.25,),
-                    const RatingItem()
+                    Padding(
+                      padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                      child: const RatingItem(),
+                    )
                   ],
                 ),
               ],

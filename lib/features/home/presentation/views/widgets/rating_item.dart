@@ -8,29 +8,27 @@ class RatingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        children: [
-          const Icon(
-            FontAwesomeIcons.solidStar,
-            color: Color(0xffFFDD4F),
-            size: 17,
+    return  Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(
+          FontAwesomeIcons.solidStar,
+          color: Color(0xffFFDD4F),
+          size: 17,
+        ),
+        const SizedBox(width: 6.3),
+        const Text(
+          '4.5',
+          style: Styles.textStyle16,
+        ),
+        const SizedBox(width: 6.3),
+        Text(
+          '(275)',
+          style: Styles.textStyle14.copyWith(
+            color: const Color(0xff707070)
           ),
-          const SizedBox(width: 5),
-          const Text(
-            '4.5',
-            style: Styles.textStyle16,
-          ),
-          const SizedBox(width: 6.3),
-          Text(
-            '(275)',
-            style: Styles.textStyle14.copyWith(
-              color: const Color(0xff707070)
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

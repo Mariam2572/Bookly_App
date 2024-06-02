@@ -1,6 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_text_button.dart';
 import 'package:bookly/features/home/presentation/views/widgets/rating_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,21 +35,20 @@ class DetailsBody extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-           Opacity(
+          Opacity(
             opacity: .7,
-             child: Text(
+            child: Text(
               'The Jungle Book',
               style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500
-                
-              ),
-                       ),
-           ),
+                  fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
+            ),
+          ),
           SizedBox(
             height: 5.h,
           ),
-          const RatingItem()
+          const RatingItem(),
+          SizedBox(height: 37.h,),
+          const BookActions()
         ],
       ),
     );
