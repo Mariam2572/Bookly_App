@@ -16,61 +16,72 @@ class DetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const BookDetailsAppBar(),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * .18),
-              child: const CustomBookImage(),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const BookDetailsAppBar(),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .18),
+                  child: const CustomBookImage(),
+                ),
+                SizedBox(
+                  height: 43.h,
+                ),
+                const Text(
+                  'The Jungle Book',
+                  style: Styles.textStyle30,
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Opacity(
+                  opacity: .7,
+                  child: Text(
+                    'The Jungle Book',
+                    style: Styles.textStyle18.copyWith(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                const RatingItem(),
+                SizedBox(
+                  height: 37.h,
+                ),
+                const BookActions(),
+                const Expanded(
+                  child: SizedBox(
+                    height: 45,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'You can also like',
+                    style: Styles.textStyle16
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  height: 16.h,
+                ),
+                const SimilarBooks(),
+                SizedBox(
+                  height: 20.h,
+                ),
+              ],
             ),
-            SizedBox(
-              height: 43.h,
-            ),
-            const Text(
-              'The Jungle Book',
-              style: Styles.textStyle30,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Opacity(
-              opacity: .7,
-              child: Text(
-                'The Jungle Book',
-                style: Styles.textStyle18.copyWith(
-                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
-              ),
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            const RatingItem(),
-            SizedBox(
-              height: 37.h,
-            ),
-            const BookActions(),
-            SizedBox(
-              height: 45.h,
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'You can also like',
-                style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 16.h,),
-            const SimilarBooks(),
-                 
-        
-          ],
-        ),
-      ),
+          ),
+        )
+      ],
     );
   }
 }
