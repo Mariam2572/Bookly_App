@@ -15,15 +15,15 @@ class BestSellerListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
-      return Padding(
-        padding:  EdgeInsets.symmetric(vertical: 10.h),
-        child: GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(AppRouter.detailsPath);
-          },
-          child: const BestSellerBook()),
-      );
-    },);
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.h),
+          child: GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.detailsPath);
+              },
+              child: const BestSellerBook()),
+        );
+      },
+    );
   }
 }
-

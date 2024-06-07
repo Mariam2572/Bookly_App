@@ -6,39 +6,34 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
- static const String splashPath = '/';
- static const String homePath ="/HomeView";
- static const String detailsPath ="/Details";
- static const String searchPath ="/Search";
-  static GoRouter router = GoRouter(
-  routes: <RouteBase>[
+  static const String splashPath = '/';
+  static const String homePath = "/HomeView";
+  static const String detailsPath = "/Details";
+  static const String searchPath = "/Search";
+  static GoRouter router = GoRouter(routes: <RouteBase>[
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const Splash();
       },
-      ),
-      
-        GoRoute(
-          path:homePath,
-          builder: (BuildContext context, GoRouterState state) {
-            return const HomeView();
-          },
-        ), 
-         GoRoute(
-          path:detailsPath,
-          builder: (BuildContext context, GoRouterState state) {
-            return const DetailsView();
-          },
-        ),
-        GoRoute(
-          path:searchPath,
-          builder: (BuildContext context, GoRouterState state) {
-            return const SearchView();
-          },
-        ),
-     
-   
-]
-);
+    ),
+    GoRoute(
+      path: homePath,
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeView();
+      },
+    ),
+    GoRoute(
+      path: detailsPath,
+      builder: (BuildContext context, GoRouterState state) {
+        return const DetailsView();
+      },
+    ),
+    GoRoute(
+      path: searchPath,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SearchView();
+      },
+    ),
+  ]);
 }

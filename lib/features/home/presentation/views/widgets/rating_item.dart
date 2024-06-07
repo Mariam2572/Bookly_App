@@ -8,7 +8,7 @@ class RatingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(
@@ -24,9 +24,7 @@ class RatingItem extends StatelessWidget {
         const SizedBox(width: 6.3),
         Text(
           '(275)',
-          style: Styles.textStyle14.copyWith(
-            color: const Color(0xff707070)
-          ),
+          style: Styles.textStyle14.copyWith(color: const Color(0xff707070)),
         ),
       ],
     );

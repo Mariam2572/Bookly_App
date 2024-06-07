@@ -1,4 +1,4 @@
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/constant/constants.dart';
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
@@ -26,7 +26,6 @@ class _SplashBodyState extends State<SplashBody>
     navigateToHome();
   }
 
-  
   @override
   void dispose() {
     animationController.dispose();
@@ -81,11 +80,14 @@ class _SplashBodyState extends State<SplashBody>
             .animate(animationController);
     animationController.forward();
   }
+
   void navigateToHome() {
-     Future.delayed(Duration(seconds: 3),(){
-      // Get.to(()=> const HomeView(),transition: Transition.fade,duration: kTransition);
-      GoRouter.of(context).push(AppRouter.homePath);
-    },
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        // Get.to(()=> const HomeView(),transition: Transition.fade,duration: kTransition);
+        GoRouter.of(context).push(AppRouter.homePath);
+      },
     );
   }
 }

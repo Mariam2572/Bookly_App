@@ -1,4 +1,4 @@
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/constant/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/search/presentation/views/widgets/result_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,7 +11,7 @@ class SearchBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,22 +19,22 @@ class SearchBody extends StatelessWidget {
           SafeArea(
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search',
-                hintStyle: Styles.textStyle18,
-                
-                suffixIcon: const Icon(FontAwesomeIcons.magnifyingGlass,size: 25),
-                enabledBorder: OutLineBorder(),
-                focusedBorder: OutLineBorder()
-              ),
+                  hintText: 'Search',
+                  hintStyle: Styles.textStyle18,
+                  suffixIcon:
+                      const Icon(FontAwesomeIcons.magnifyingGlass, size: 25),
+                  enabledBorder: OutLineBorder(),
+                  focusedBorder: OutLineBorder()),
             ),
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.all(15.0),
-            child: Text('Search Results',style: Styles.textStyle18.copyWith(
-              fontFamily: kGTSectraFine
-            ),),
+            child: Text(
+              'Search Results',
+              style: Styles.textStyle18.copyWith(fontFamily: kGTSectraFine),
+            ),
           ),
-          const Expanded(child:  ResultItem())
+          const Expanded(child: ResultItem())
         ],
       ),
     );
@@ -42,12 +42,9 @@ class SearchBody extends StatelessWidget {
 
   OutlineInputBorder OutLineBorder() {
     return const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(15),
-                
-                ),
-                borderSide: BorderSide(
-                  color: Colors.white
-                )
-              );
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+        borderSide: BorderSide(color: Colors.white));
   }
 }

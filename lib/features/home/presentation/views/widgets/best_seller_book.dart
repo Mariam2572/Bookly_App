@@ -1,4 +1,4 @@
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/constant/constants.dart';
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -73,7 +73,7 @@ class BestSellerBook extends StatelessWidget {
                     // Spacer(),
                     // SizedBox(width: MediaQuery.of(context).size.width*.25,),
                     Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
                       child: const RatingItem(),
                     )
                   ],
