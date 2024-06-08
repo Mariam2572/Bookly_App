@@ -19,7 +19,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.badCertificate:
         return ServerFailure(errorMessage: 'Something went wrong');
       case DioExceptionType.badResponse:
-        ServerFailure.fromResponse(dioException.response!.statusCode!, dioException.response);
+        ServerFailure.fromResponse(
+            dioException.response!.statusCode!, dioException.response);
       case DioExceptionType.cancel:
         return ServerFailure(errorMessage: 'Request is canceled');
 
@@ -27,15 +28,13 @@ class ServerFailure extends Failure {
         return ServerFailure(errorMessage: 'Please check internet connection');
       case DioExceptionType.unknown:
         return ServerFailure(errorMessage: 'Something went wrong');
-        
     }
-     return ServerFailure(errorMessage: 'Something went wrong');
+    return ServerFailure(errorMessage: 'Something went wrong');
   }
-  factory ServerFailure.fromResponse(int  statusCode , dynamic response){
-    if (statusCode >= 200 && statusCode < 300 ) {
-      return response ;
-    } 
-      return ServerFailure(errorMessage: 'Server Error ');
-    
+  factory ServerFailure.fromResponse(int statusCode, dynamic response) {
+    if (statusCode >= 200 && statusCode < 300) {
+      return response;
+    }
+    return ServerFailure(errorMessage: 'Server Error ');
   }
 }
