@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
@@ -28,7 +29,7 @@ class DetailsBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * .18),
-                  child: const CustomBookImage(),
+                  child: const CustomBookImage(imagePath: AppAssets.testImageUrl,),
                 ),
                 SizedBox(
                   height: 43.h,

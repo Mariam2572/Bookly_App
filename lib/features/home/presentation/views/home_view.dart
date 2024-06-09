@@ -19,7 +19,8 @@ class HomeView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              const FeaturedBooksListView(),
+                const CustomHomeAppBar(),
+               FeaturedBooksListView(),
                 Padding(
                   padding: EdgeInsets.only(top: 50.h, left: 20.w, bottom: 20.h),
                   child: const Text('Best Seller', style: Styles.textStyle18),
