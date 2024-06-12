@@ -1,12 +1,13 @@
-import 'package:bookly/core/constant/constants.dart';
+import 'package:bookly/core/Errors/error_widget.dart';
 import 'package:bookly/core/utils/services_locator.dart';
-import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/data/model/book_model/book_model.dart';
 import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
-import 'package:bookly/features/home/presentation/manager/cubit/featured_books_cubit.dart';
+import 'package:bookly/features/home/presentation/manager/featured_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/app_router.dart';
 
 class FeaturedBooksListView extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class FeaturedBooksListView extends StatefulWidget {
 
 class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
   FeaturedBooksCubit cubit = FeaturedBooksCubit(getIt.get<HomeRepoImpl>());
- @override
+  @override
   // void initState() {
   //   cubit.fetchFeaturedBooks();
   //   // TODO: implement initState
@@ -29,20 +30,32 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
       builder: (context, state) {
         if (state is FeaturedBooksLoading) {
           return const Center(
-            child:  CircularProgressIndicator(),
+            child: CircularProgressIndicator(),
           );
         } else if (state is FeaturedBooksError) {
-          return Text(state.errorMessage,style: Styles.textStyle20,);
+          return Center(
+              child: CustomErrorWidget(
+            text: state.errorMessage,
+            onPressed: () => cubit.fetchFeaturedBooks(),
+          ));
         } else if (state is FeaturedBooksSuccess) {
-          
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
-              itemCount: state.bookModel.items?.length,
+              itemCount: state.bookModel.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return  CustomBookImage(imagePath: state.bookModel.items?[index].volumeInfo?.imageLinks?.thumbnail??'' ,);
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context)
+                        .push(AppRouter.detailsPath, extra: state.bookModel[index]);
+                  },
+                  child: CustomBookImage(
+                      imagePath: state.bookModel[index].volumeInfo.imageLinks
+                              ?.thumbnail ??
+                          ''),
+                );
               },
             ),
           );

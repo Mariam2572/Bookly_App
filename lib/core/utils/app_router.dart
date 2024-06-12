@@ -1,6 +1,7 @@
+import 'package:bookly/features/home/data/model/test/NewBook.dart';
+
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/details_view.dart';
-import 'package:bookly/features/search/presentation/views/widgets/search_view.dart';
 import 'package:bookly/features/splash/persentation/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -26,14 +27,17 @@ class AppRouter {
     GoRoute(
       path: detailsPath,
       builder: (BuildContext context, GoRouterState state) {
-        return const DetailsView();
+        return DetailsView(
+          newBook: state.extra as NewBook,
+          
+        );
       },
     ),
-    GoRoute(
-      path: searchPath,
-      builder: (BuildContext context, GoRouterState state) {
-        return const SearchView();
-      },
-    ),
+    // GoRoute(
+    //   path: searchPath,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return const SearchView();
+    //   },
+    // ),
   ]);
 }

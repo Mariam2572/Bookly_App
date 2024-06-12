@@ -17,7 +17,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.receiveTimeout:
         return ServerFailure(errorMessage: 'Receive timeout with Api Server');
       case DioExceptionType.badCertificate:
-        return ServerFailure(errorMessage: 'Something went wrong');
+        return ServerFailure(
+            errorMessage: 'Something went wrong(badCertificate)');
       case DioExceptionType.badResponse:
         ServerFailure.fromResponse(
             dioException.response!.statusCode!, dioException.response);
@@ -27,9 +28,9 @@ class ServerFailure extends Failure {
       case DioExceptionType.connectionError:
         return ServerFailure(errorMessage: 'Please check internet connection');
       case DioExceptionType.unknown:
-        return ServerFailure(errorMessage: 'Something went wrong');
+        return ServerFailure(errorMessage: 'Something went wrong(unknown)');
     }
-    return ServerFailure(errorMessage: 'Something went wrong');
+    return ServerFailure(errorMessage: 'Something went wrong(default)');
   }
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode >= 200 && statusCode < 300) {

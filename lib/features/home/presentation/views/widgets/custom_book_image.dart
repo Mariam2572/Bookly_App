@@ -8,7 +8,7 @@ class CustomBookImage extends StatelessWidget {
     Key? key,
     required this.imagePath,
   }) : super(key: key);
-final String imagePath;
+  final String imagePath;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,10 +19,11 @@ final String imagePath;
           aspectRatio: 2.5 / 4,
           child: CachedNetworkImage(
             fit: BoxFit.fill,
-          imageUrl: imagePath,
-          placeholder: (context, url) => Center(child: const CircularProgressIndicator()),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-             ), 
+            imageUrl: imagePath,
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
           //  Container(
           //   decoration:  BoxDecoration(
           //       borderRadius: BorderRadius.all(Radius.circular(25)),
