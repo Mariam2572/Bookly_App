@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 SaleInfo saleInfoFromJson(String str) => SaleInfo.fromJson(json.decode(str));

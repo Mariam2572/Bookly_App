@@ -1,7 +1,7 @@
-import 'package:bookly/core/constant/constants.dart';
-import 'package:bookly/core/utils/app_assets.dart';
-import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/features/home/presentation/views/home_view.dart';
+import '../../../../../core/constant/constants.dart';
+import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../home/presentation/views/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

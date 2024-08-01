@@ -1,21 +1,20 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bookly/features/home/data/model/test/NewBook.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similar_books.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../data/model/book/book_model.dart';
 
 class DetailsBody extends StatelessWidget {
- NewBook newBookModel;
+ BookModel bookModel;
   DetailsBody({
     Key? key,
-    required this.newBookModel,
+    required this.bookModel,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -32,14 +31,14 @@ class DetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * .18),
                   child: CustomBookImage(
-                    imagePath: newBookModel.volumeInfo.imageLinks?.thumbnail??'',
+                    imagePath: bookModel.volumeInfo.imageLinks?.thumbnail??'',
                   ),
                 ),
                 SizedBox(
                   height: 43.h,
                 ),
                 Text(
-                  newBookModel.volumeInfo.title ?? '',
+                  bookModel.volumeInfo.title ?? '',
                   style: Styles.textStyle30.copyWith(fontSize: 25),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -50,7 +49,7 @@ class DetailsBody extends StatelessWidget {
                 Opacity(
                   opacity: .7,
                   child: Text(
-                    newBookModel.volumeInfo.authors?[0] ?? '',
+                    bookModel.volumeInfo.authors?[0] ?? '',
                     style: Styles.textStyle18.copyWith(
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w500),

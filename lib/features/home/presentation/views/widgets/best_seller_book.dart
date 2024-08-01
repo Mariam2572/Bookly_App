@@ -1,18 +1,18 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bookly/features/home/data/model/test/NewBook.dart';
 
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:bookly/core/constant/constants.dart';
-import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/rating_item.dart';
+
+import '../../../../../core/constant/constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../data/model/book/book_model.dart';
+import 'custom_book_image.dart';
+import 'rating_item.dart';
 
 class BestSellerBook extends StatelessWidget {
   BestSellerBook({Key? key, required this.index, required this.bookModel})
       : super(key: key);
-  NewBook bookModel;
+  BookModel bookModel;
   int index;
   @override
   Widget build(BuildContext context) {

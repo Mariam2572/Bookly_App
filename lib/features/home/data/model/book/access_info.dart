@@ -1,6 +1,9 @@
-import 'Epub.dart';
-import 'Pdf.dart';
+
+
 import 'dart:convert';
+
+import 'package:bookly/features/home/data/model/book/epub.dart';
+import 'package:bookly/features/home/data/model/book/pdf.dart';
 
 AccessInfo accessInfoFromJson(String str) => AccessInfo.fromJson(json.decode(str));
 String accessInfoToJson(AccessInfo data) => json.encode(data.toJson());

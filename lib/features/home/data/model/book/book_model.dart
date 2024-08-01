@@ -1,14 +1,13 @@
-import 'package:bookly/features/home/data/model/test/searchinfo.dart';
-import 'package:equatable/equatable.dart';
-
-import 'VolumeInfo.dart';
-import 'SaleInfo.dart';
-import 'AccessInfo.dart';
-import 'dart:convert';
 
 // NewBook newBookFromJson(String str) => NewBook.fromJson(json.decode(str));
 // String newBookToJson(NewBook data) => json.encode(data.toJson());
-class NewBook extends Equatable {
+import 'package:bookly/features/home/data/model/book/access_info.dart';
+import 'package:bookly/features/home/data/model/book/sale_info.dart';
+import 'package:bookly/features/home/data/model/book/searchinfo.dart';
+import 'package:bookly/features/home/data/model/book/volume_info.dart';
+import 'package:equatable/equatable.dart';
+
+class BookModel extends Equatable {
   final String? kind;
   final String? id;
   final String? etag;
@@ -18,7 +17,7 @@ class NewBook extends Equatable {
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
 
-  const NewBook({
+  const BookModel({
     this.kind,
     this.id,
     this.etag,
@@ -29,7 +28,7 @@ class NewBook extends Equatable {
     this.searchInfo,
   });
 
-  factory NewBook.fromJson(Map<String, dynamic> json) => NewBook(
+  factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
         id: json['id'] as String?,
         etag: json['etag'] as String?,

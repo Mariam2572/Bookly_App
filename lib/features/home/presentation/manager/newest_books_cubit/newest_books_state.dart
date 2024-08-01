@@ -1,4 +1,7 @@
-part of 'newest_books_cubit.dart';
+
+import 'package:equatable/equatable.dart';
+
+import '../../../data/model/book/book_model.dart';
 
 sealed class NewestBooksState extends Equatable {
   const NewestBooksState();
@@ -18,6 +21,6 @@ final class NewestBooksError extends NewestBooksState {
 }
 
 final class NewestBooksSuccess extends NewestBooksState {
-  List<NewBook> bookModel;
+  List<BookModel> bookModel;
   NewestBooksSuccess({required this.bookModel});
 }

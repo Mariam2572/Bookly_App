@@ -1,3 +1,5 @@
+
+
 import 'dart:convert';
 
 IndustryIdentifiers industryIdentifiersFromJson(String str) => IndustryIdentifiers.fromJson(json.decode(str));

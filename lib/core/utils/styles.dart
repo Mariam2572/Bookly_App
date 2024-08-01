@@ -1,5 +1,8 @@
-import 'package:bookly/core/constant/constants.dart';
+
+
 import 'package:flutter/material.dart';
+
+import '../constant/constants.dart';
 
 class Styles {
   static const textStyle18 =

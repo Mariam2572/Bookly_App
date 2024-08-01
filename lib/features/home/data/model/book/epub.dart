@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 Epub epubFromJson(String str) => Epub.fromJson(json.decode(str));

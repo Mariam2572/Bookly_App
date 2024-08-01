@@ -1,4 +1,7 @@
-part of 'similar_books_cubit.dart';
+
+
+import 'package:bookly/features/home/data/model/book/book_model.dart';
+import 'package:equatable/equatable.dart';
 
 sealed class SimilarBooksState extends Equatable {
   const SimilarBooksState();
@@ -12,11 +15,11 @@ final class SimilarBooksInitial extends SimilarBooksState {}
 final class SimilarBooksLoading extends SimilarBooksState {}
 
 final class SimilarBooksError extends SimilarBooksState {
-  String errorMessage;
+  String ?errorMessage;
   SimilarBooksError({required this.errorMessage});
 }
 
 final class SimilarBooksSuccess extends SimilarBooksState {
-  List<NewBook> bookModel;
+  List<BookModel> bookModel;
   SimilarBooksSuccess({required this.bookModel});
 }

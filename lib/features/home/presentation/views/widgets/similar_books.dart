@@ -1,11 +1,14 @@
-import 'package:bookly/core/Errors/error_widget.dart';
-import 'package:bookly/core/utils/app_assets.dart';
+
+
 import 'package:bookly/core/utils/services_locator.dart';
-import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/manager/cubit/similar_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/_errors/error_widget.dart';
+import '../../../data/repo/home_repo_impl.dart';
+import '../../manager/cubit/similar_books_state.dart';
 
 class SimilarBooks extends StatelessWidget {
   SimilarBooksCubit cubit =
@@ -21,7 +24,7 @@ class SimilarBooks extends StatelessWidget {
           );
         } else if (state is SimilarBooksError) {
           CustomErrorWidget(
-            text: state.errorMessage,
+            text: state.errorMessage??'',
             onPressed: () => cubit.fetchSimilarBooks(),
           );
         }

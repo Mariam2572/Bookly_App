@@ -1,8 +1,11 @@
-import 'IndustryIdentifiers.dart';
-import 'ReadingModes.dart';
-import 'PanelizationSummary.dart';
-import 'ImageLinks.dart';
+
 import 'dart:convert';
+
+import 'package:bookly/features/home/data/model/book/image_links.dart';
+import 'package:bookly/features/home/data/model/book/industry_identifiers.dart';
+import 'package:bookly/features/home/data/model/book/reading_modes.dart';
+
+import 'panelization_summary.dart';
 
 VolumeInfo volumeInfoFromJson(String str) => VolumeInfo.fromJson(json.decode(str));
 String volumeInfoToJson(VolumeInfo data) => json.encode(data.toJson());

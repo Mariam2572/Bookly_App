@@ -1,13 +1,17 @@
-import 'package:bookly/core/Errors/error_widget.dart';
-import 'package:bookly/core/utils/services_locator.dart';
-import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
-import 'package:bookly/features/home/presentation/manager/featured_cubit/featured_books_cubit.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
+
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/_errors/error_widget.dart';
 import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/services_locator.dart';
+import '../../../data/repo/home_repo_impl.dart';
+import '../../manager/featured_cubit/featured_books_cubit.dart';
+import '../../manager/featured_cubit/featured_books_state.dart';
+import 'custom_book_image.dart';
 
 class FeaturedBooksListView extends StatefulWidget {
   @override

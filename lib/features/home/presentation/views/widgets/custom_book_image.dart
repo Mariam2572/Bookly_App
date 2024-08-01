@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
+
+
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:bookly/core/utils/app_assets.dart';
+import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({

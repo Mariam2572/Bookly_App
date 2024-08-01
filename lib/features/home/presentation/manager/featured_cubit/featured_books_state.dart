@@ -1,4 +1,7 @@
-part of 'featured_books_cubit.dart';
+
+
+import 'package:bookly/features/home/data/model/book/book_model.dart';
+import 'package:equatable/equatable.dart';
 
 sealed class FeaturedBooksState extends Equatable {
   const FeaturedBooksState();
@@ -17,6 +20,6 @@ final class FeaturedBooksError extends FeaturedBooksState {
 }
 
 final class FeaturedBooksSuccess extends FeaturedBooksState {
-  List<NewBook> bookModel;
+  List<BookModel> bookModel;
   FeaturedBooksSuccess(this.bookModel);
 }
